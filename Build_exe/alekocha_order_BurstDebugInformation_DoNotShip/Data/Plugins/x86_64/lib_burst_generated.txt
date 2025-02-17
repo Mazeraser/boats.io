@@ -1,4 +1,4 @@
-Library: E:\alekocha_order\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: E:\alekocha_order\boats.io\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --backend=burst-llvm-16
 --target=X64_SSE2
@@ -9,11 +9,11 @@ Library: E:\alekocha_order\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_genera
 --target-framework=NetFramework
 --linker-options=PdbAltPath="alekocha_order_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=E:\alekocha_order\Temp\Burst
+--temp-folder=E:\alekocha_order\boats.io\Temp\Burst
 --debug=Full
 --key-folder=E:/Unity/unity/2022.3.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=E:\alekocha_order\Library\Burst
---output=E:\alekocha_order\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=E:\alekocha_order\boats.io\Library\Burst
+--output=E:\alekocha_order\boats.io\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10
@@ -57,11 +57,11 @@ Library: E:\alekocha_order\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_genera
 --target-framework=NetFramework
 --linker-options=PdbAltPath="alekocha_order_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=E:\alekocha_order\Temp\Burst
+--temp-folder=E:\alekocha_order\boats.io\Temp\Burst
 --debug=Full
 --key-folder=E:/Unity/unity/2022.3.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=E:\alekocha_order\Library\Burst
---output=E:\alekocha_order\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=E:\alekocha_order\boats.io\Library\Burst
+--output=E:\alekocha_order\boats.io\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Burst.BurstCompiler+BurstCompilerHelper, Unity.Burst, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::IsBurstEnabled()--8c2be93e18276203cbd918daa2748a10

@@ -115,7 +115,7 @@ namespace Codebase.Infrastructure.Server
             _playerName = playerNameField.text.Length<=1 ? "Player_"+Random.Range(0,2000):playerNameField.text;
             PhotonNetwork.NickName = _playerName==""?"Player":_playerName;
 
-            PhotonNetwork.JoinRoom(_selectedRoomNameField.text ?? "Room");
+            PhotonNetwork.JoinOrCreateRoom(_selectedRoomNameField.text, new RoomOptions{MaxPlayers = 20, IsVisible = true}, TypedLobby.Default);
         }
 
         private void CreateRoom()

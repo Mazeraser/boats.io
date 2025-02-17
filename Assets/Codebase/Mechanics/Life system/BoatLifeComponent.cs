@@ -29,13 +29,15 @@ namespace Codebase.Mechanics.Life_system
         }
         public void GetDamage(int damage)
         {
+            Debug.Log("Ouch!");
             HP = _currentHealth - damage;
+            Debug.Log(HP);
         }
 
         public void Death()
         {
             Debug.Log("Boat is death");
-            GetComponent<IAnimator>()?.Death(()=>{Destroy(gameObject);});
+            GetComponent<IAnimator>().Death(()=>{Destroy(gameObject);});
         }
 
         private void Start()
