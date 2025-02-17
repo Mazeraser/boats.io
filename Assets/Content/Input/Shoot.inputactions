@@ -1,0 +1,46 @@
+{
+    "name": "Shoot",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "ecae9216-0276-4a93-ae91-dab60770172d",
+            "actions": [
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "c5d57e09-974c-476d-ba30-57c030ba35d4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "342223db-6551-42d7-a03b-440f26de4ce5",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Mouse",
+            "bindingGroup": "Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

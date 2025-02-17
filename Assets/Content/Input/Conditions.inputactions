@@ -1,0 +1,86 @@
+{
+    "name": "Conditions",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "4335c710-e44e-4170-91d0-9f6dc5151de1",
+            "actions": [
+                {
+                    "name": "First",
+                    "type": "Button",
+                    "id": "1150e376-bd75-48ce-9e02-3213ba684b31",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Second",
+                    "type": "Button",
+                    "id": "93a3b6e1-0cbf-44b9-be50-d719754794b1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Third",
+                    "type": "Button",
+                    "id": "ee7f014e-406c-4793-bf34-aae952dd2dcb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7a83b716-2ba9-4411-94ce-8c06363c19cd",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "First",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "28df7b76-6997-457b-add0-97a82132719b",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Second",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8fe6b5c-c470-417e-9deb-be367ef97b3a",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Third",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
