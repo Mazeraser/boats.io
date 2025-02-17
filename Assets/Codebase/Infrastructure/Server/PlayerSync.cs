@@ -59,13 +59,11 @@ namespace Codebase.Infrastructure.Server
             {
                 stream.SendNext(transform.position);
                 stream.SendNext(transform.rotation);
-                //stream.SendNext(_info);
             }
             else
             {
                 _latestPos = (Vector3)stream.ReceiveNext();
                 _latestRot = (Quaternion)stream.ReceiveNext();
-                //_info = (PlayerInfo)stream.ReceiveNext();
             }
         }
         

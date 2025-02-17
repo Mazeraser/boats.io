@@ -8,6 +8,8 @@ namespace Codebase.Mechanics.Life_system
     {
         [SerializeField]
         private int _maxHealth = 100;
+
+        public int MaxHP => _maxHealth;
         
         private int _currentHealth;
 

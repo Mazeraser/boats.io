@@ -74,3 +74,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 *.TODO
+Build_exe/
+Build_web/
