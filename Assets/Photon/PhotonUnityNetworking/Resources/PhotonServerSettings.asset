@@ -44,6 +44,9 @@ MonoBehaviour:
   - SyncNick
   - SyncCondition
   - SyncHPBar
+  - SyncBullets
+  - RegisterBullet
+  - SetEnvironment
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

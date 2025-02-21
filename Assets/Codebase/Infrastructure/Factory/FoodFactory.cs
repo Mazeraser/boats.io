@@ -1,8 +1,10 @@
-﻿using Codebase.Mechanics.Feed_system;
+﻿using System;
+using Codebase.Mechanics.Feed_system;
 using System.Collections.Generic;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using Photon.Pun;
+using Random = UnityEngine.Random;
 
 namespace Codebase.Infrastructure.Factory
 {
@@ -34,6 +36,11 @@ namespace Codebase.Infrastructure.Factory
             foodTransform.position = new Vector3(Random.Range(-1 * (_arenaSize / 2 - 1), _arenaSize / 2),
                     Random.Range(-1 * (_arenaSize / 2 - 1), _arenaSize / 2), 
                     0);
+        }
+
+        private void Start()
+        {
+            gameObject.SetActive(PhotonNetwork.IsMasterClient);
         }
 
         private async void Update()

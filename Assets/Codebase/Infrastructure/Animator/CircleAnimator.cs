@@ -28,8 +28,7 @@ namespace Codebase.Infrastructure.Animator
             _regularScale = transform.localScale;
             transform.localScale = new Vector3(0, 0, 0);
             _animations = DOTween.Sequence();
-            if(!gameObject.CompareTag("Environment"))
-                Born();
+            Born();
         }
 
         private void OnDestroy()

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using Codebase.Infrastructure.InputService;
 using Photon.Pun;
 using UnityEngine;
+using Codebase.Infrastructure.Client;
 
 namespace Codebase.Mechanics.Shoot_system
 {
@@ -11,7 +13,11 @@ namespace Codebase.Mechanics.Shoot_system
         private GameObject _bulletPrefab;
         [SerializeField] 
         private Transform _muzzle;
+        [SerializeField]
+        private PlayerSync _playerSync;
 
+        private List<GameObject> _bullets = new List<GameObject>();
+        
         private Shoot _input;
 
         private void Awake()

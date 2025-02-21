@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3322131803692993775}
   - component: {fileID: -3577231294371600801}
   - component: {fileID: -6776612194838185655}
-  - component: {fileID: 8734737671045542383}
+  - component: {fileID: 1062205480041159529}
   m_Layer: 0
   m_Name: Food
   m_TagString: Environment
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeToTransition: 0.2
---- !u!114 &8734737671045542383
+--- !u!114 &1062205480041159529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

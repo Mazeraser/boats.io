@@ -29,12 +29,17 @@ namespace Codebase.Infrastructure.Factory
         public GameObject CreateProduct(GameObject prefab)
         {
             Vector3 position = new Vector3(Random.Range(-1*(_arenaSize/2-1), _arenaSize/2), Random.Range(-1*(_arenaSize/2-1), _arenaSize/2), 0);
-            GameObject entity = PhotonNetwork.Instantiate(prefab.name, position, Quaternion.identity);
+            GameObject entity = Instantiate(prefab, position, Quaternion.identity);
             float entityScale = Random.Range(_minSize, _maxSize);
             entity.transform.localScale = new Vector3(entityScale,entityScale,1);
             return entity;
         }
-        
+
+        private void Start()
+        {
+            gameObject.SetActive(PhotonNetwork.IsMasterClient);
+        }
+
         private void Update()
         {
             if (Entities.Count < _environmentLimit)

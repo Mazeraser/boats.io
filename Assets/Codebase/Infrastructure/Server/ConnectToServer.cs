@@ -21,7 +21,7 @@ namespace Codebase.Infrastructure.Server
 
         public override void OnJoinedLobby()
         {
-            SceneManager.LoadScene("Lobby");
+            SceneManager.LoadScene("Lobby_server");
         }
     }
 }

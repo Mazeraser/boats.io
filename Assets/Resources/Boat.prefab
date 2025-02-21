@@ -340,6 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 515997624439372207, guid: 6a47555db5ad8ee4ca7fbdb8b8854c7e, type: 3}
   _muzzle: {fileID: 3863628567709515609}
+  _playerSync: {fileID: 0}
 --- !u!1 &6755423798551664584
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,9 +362,10 @@ GameObject:
   - component: {fileID: 246584618185683019}
   - component: {fileID: 1302450412305799983}
   - component: {fileID: -6367127143687395520}
+  - component: {fileID: -2561070843753346366}
   m_Layer: 0
   m_Name: Boat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,6 +541,7 @@ MonoBehaviour:
   - {fileID: 5065499751762244551}
   _playerNick: {fileID: 4934338038661333712}
   _visionRadius: 45
+  _updateEnvironmentTime: 1.5
 --- !u!114 &4204880982011927719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,15 +632,31 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 1
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
   - {fileID: -2547723715317581692}
-  - {fileID: 4204880982011927719}
+  - {fileID: -2561070843753346366}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-2561070843753346366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755423798551664584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &7126793815271633575
 GameObject:
   m_ObjectHideFlags: 0

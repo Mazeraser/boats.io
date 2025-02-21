@@ -17,6 +17,7 @@ namespace Codebase.Infrastructure.Factory
         private void Start()
         {
             CreateProduct(_wallPrefab);
+            gameObject.SetActive(false);
         }
         
         public GameObject CreateProduct(GameObject prefab)

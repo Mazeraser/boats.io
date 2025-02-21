@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using Codebase.Mechanics.Life_system;
+using Photon.Pun;
 
 namespace Codebase.Mechanics.Shoot_system
 {
@@ -26,13 +27,13 @@ namespace Codebase.Mechanics.Shoot_system
         private void OnCollisionEnter2D(Collision2D other)
         {
             other.gameObject.GetComponent<ILive>()?.GetDamage(_dmg);
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
 
         private IEnumerator DestroyBullet(float timer)
         {
             yield return new WaitForSeconds(timer);
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 }

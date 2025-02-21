@@ -6,6 +6,7 @@ using System.Linq;
 using Cinemachine;
 using Cysharp.Threading.Tasks;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 namespace Codebase.Infrastructure.Factory
 {
@@ -34,11 +35,12 @@ namespace Codebase.Infrastructure.Factory
         [SerializeField] 
         private int _boatCount;
 
+        private Vector3 _playerPosition=new Vector3(0,0,0);
+
         public GameObject CreateProduct(GameObject prefab)
         {
-            Vector3 position = new Vector3(0,0,0);
-                
-            GameObject player = PhotonNetwork.Instantiate(prefab.name,position, Quaternion.identity);
+            PhotonNetwork.AutomaticallySyncScene = true;
+            GameObject player = PhotonNetwork.Instantiate(prefab.name,_playerPosition, Quaternion.identity);
             _players.Add(player);
             PlayerEnterTheGameEvent?.Invoke(_bots.Count);
             return player;
@@ -54,7 +56,7 @@ namespace Codebase.Infrastructure.Factory
 
         private void DestroyBot()
         {
-            Destroy(_bots[0]);
+            PhotonNetwork.Destroy(_bots[0]);
             _bots.RemoveAll(item => item == null);
         }
 
@@ -84,18 +86,25 @@ namespace Codebase.Infrastructure.Factory
 
         private async void Start()
         {
-            Vector3 playerPosition = await FindSpawnPosition();
-            GameObject player = CreateProduct(_playerPrefab);
-            player.transform.position = playerPosition;
-            _virtualCamera.Follow = player.transform;
+            if (!PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.AutomaticallySyncScene = true;
+                _playerPosition = await FindSpawnPosition();
+                GameObject player = CreateProduct(_playerPrefab);
+                _virtualCamera.Follow = player.transform;
+                gameObject.SetActive(false);
+            }
         }
 
         private async void Update()
-        { 
-            if (_players.Count + _bots.Count < _boatCount)
-                await CreateBot(_botPrefab);
-            else if (_players.Count + _bots.Count > _boatCount && _boatCount!=0) 
-                DestroyBot();
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                if (_players.Count + _bots.Count < _boatCount)
+                    await CreateBot(_botPrefab);
+                else if (_players.Count + _bots.Count > _boatCount && _boatCount!=0) 
+                    DestroyBot();
+            }
         }
         
         void OnGUI()
@@ -127,6 +136,7 @@ namespace Codebase.Infrastructure.Factory
 
         public override void OnLeftRoom()
         {
+            Debug.Log("Player has left from room");
             UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
         }
     }
