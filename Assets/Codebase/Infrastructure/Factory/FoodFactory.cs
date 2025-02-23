@@ -31,11 +31,14 @@ namespace Codebase.Infrastructure.Factory
             return entity.GetComponent<Food>();
         }
 
-        private void ReplaceFood(Transform foodTransform)
+        private void ReplaceFood(Transform foodTransform, IAnimator animator)
         {
-            foodTransform.position = new Vector3(Random.Range(-1 * (_arenaSize / 2 - 1), _arenaSize / 2),
-                    Random.Range(-1 * (_arenaSize / 2 - 1), _arenaSize / 2), 
-                    0);
+            animator.Death(()={
+                foodTransform.position = new Vector3(Random.Range(-1 * (_arenaSize / 2 - 1), _arenaSize / 2),
+                                                   Random.Range(-1 * (_arenaSize / 2 - 1), _arenaSize / 2), 
+                                                   0);
+            });
+           animator.Born();
         }
 
         private void Start()

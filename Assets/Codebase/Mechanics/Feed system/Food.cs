@@ -9,7 +9,7 @@ namespace Codebase.Mechanics.Feed_system
     /// </summary>
     public class Food : MonoBehaviour
     {
-        public delegate void Eated(Transform objectTransform);
+        public delegate void Eated(Transform objectTransform, IAnimator animator);
         public Eated EatedDelegate;
         
         [SerializeField]
@@ -24,8 +24,7 @@ namespace Codebase.Mechanics.Feed_system
 
         public void Eat()
         {
-            EatedDelegate?.Invoke(transform);
-            GetComponent<IAnimator>()?.Death();
+            EatedDelegate?.Invoke(transform, GetComponent<IAnimator>());
         }
 
         private void OnTriggerEnter2D(Collider2D other)
